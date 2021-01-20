@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 14:04:38 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/20 16:22:46 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/01/20 16:56:07 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Contact
 		~Contact();
 		void 				setInfo(const std::string str, int i);
 		void				setIndex(int id);
-		const std::string	getInfo(std::string field);
 		const std::string	getField(int i);
 		void				print_index();
 		void				display();
