@@ -6,13 +6,12 @@
 #    By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 14:01:32 by judecuyp          #+#    #+#              #
-#    Updated: 2021/01/19 16:23:10 by judecuyp         ###   ########.fr        #
+#    Updated: 2021/01/20 16:19:30 by judecuyp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
-SRCS = PhoneBook.cpp main.cpp
-INCLUDES  = PhoneBook.hpp
+SRCS = PhoneBook.cpp  Contact.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror
@@ -22,7 +21,7 @@ all: 		$(NAME)
 
 $(NAME):	$(OBJS)
 	@echo "Compiling $@"
-	@$(CXX) $(CXXFLAGS) -I $(INCLUDES) -o $(NAME) $(OBJS)
+	@$(CXX) $(CXXFLAGS) -I. -o $(NAME) $(OBJS)
 	@echo "Success"
 
 clean:
