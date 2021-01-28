@@ -6,12 +6,12 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 14:04:38 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/20 16:56:07 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/01/21 10:25:34 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(HUMAN_HPP)
-#define HUMAN_HPP
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
 # include <string>
 # include <iostream>

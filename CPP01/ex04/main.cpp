@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 14:04:43 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/21 10:25:29 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/28 18:47:06 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/28 20:01:57 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include <iostream>
+#include <string>
 
-# include "Contact.hpp"
-# include <limits>
-
-class PhoneBook
+int main()
 {
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void	setContact();
-		void	print_command();
-		void	print_list();
+	std::string str = "HI THIS IS BRAIN";
+	
+	std::string *pt = &str;
+	std::string &ref = str;
 
-	private:
-		Contact list[8];
-		int     amount;
+	std::cout << "Pointer : " << *pt << std::endl;
+	std::cout << "Reference : " << ref << std::endl;
 
-		void 	choice();
-};
 
-#endif
+}

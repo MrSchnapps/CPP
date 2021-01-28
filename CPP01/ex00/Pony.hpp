@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 14:04:43 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/21 10:25:29 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/21 10:25:41 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/21 11:04:39 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef PONY_HPP
+# define PONY_HPP
 
-# include "Contact.hpp"
-# include <limits>
+# include <iostream>
+# include <string>
 
-class PhoneBook
+class Pony
 {
 	public:
-		PhoneBook();
-		~PhoneBook();
-		void	setContact();
-		void	print_command();
-		void	print_list();
+		Pony();
+		Pony(std::string name, std::string color);
+		~Pony();
+		void		setName(std::string name);
+		void		setColor(std::string color);
+		std::string	getName();
+		std::string	getColor();
+		void		neigh();
+		void		sayMyName();	
 
 	private:
-		Contact list[8];
-		int     amount;
+		std::string name;
+		std::string color;
 
-		void 	choice();
 };
 
 #endif

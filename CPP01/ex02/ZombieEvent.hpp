@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 14:04:43 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/21 10:25:29 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/21 13:31:40 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/28 10:09:05 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef ZOMBIEEVENT_HPP
+# define ZOMBIEEVENT_HPP
 
-# include "Contact.hpp"
-# include <limits>
+# include "Zombie.hpp"
+# include <cstdlib>
+# include <ctime>
 
-class PhoneBook
+class ZombieEvent
 {
 	public:
-		PhoneBook();
-		~PhoneBook();
-		void	setContact();
-		void	print_command();
-		void	print_list();
+		ZombieEvent();
+		ZombieEvent(std::string type);
+		~ZombieEvent();
+
+		void	setZombieType(std::string type);
+		Zombie	*newZombie(std::string name);
+		Zombie  *randomChump();
 
 	private:
-		Contact list[8];
-		int     amount;
-
-		void 	choice();
+		std::string type;
 };
-
 #endif

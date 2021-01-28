@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 14:04:43 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/21 10:25:29 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/21 13:31:45 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/28 18:46:41 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "ZombieEvent.hpp"
 
-# include "Contact.hpp"
-# include <limits>
-
-class PhoneBook
+int main()
 {
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void	setContact();
-		void	print_command();
-		void	print_list();
+	Zombie		*zb;
+	ZombieEvent	zb_ev;
 
-	private:
-		Contact list[8];
-		int     amount;
+	if (1) // I create a scope for my zombie
+	{
+		Zombie zombie_stack("Big", "Francky");
+		zombie_stack.announce();
+	}
+	zb_ev.setZombieType("Shiny");
+	zb = zb_ev.newZombie("Terry");
+	zb->announce();
+	delete zb;
+	zb = zb_ev.randomChump();
+	delete zb;
 
-		void 	choice();
-};
 
-#endif
+	return (0);
+}

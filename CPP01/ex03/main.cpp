@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 14:04:43 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/21 10:25:29 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/28 13:44:49 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/28 18:44:12 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "ZombieHorde.hpp"
 
-# include "Contact.hpp"
-# include <limits>
-
-class PhoneBook
+int main()
 {
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void	setContact();
-		void	print_command();
-		void	print_list();
+	std::srand(std::time(nullptr));
+	{
+		ZombieHorde horde(6);
+		horde.announce();
+	}
+	std::cout << "------------------------" << std::endl;
+	ZombieHorde horde_wrong(-5);
+	horde_wrong.announce();
 
-	private:
-		Contact list[8];
-		int     amount;
-
-		void 	choice();
-};
-
-#endif
+	std::cout << "------------------------" << std::endl;
+	ZombieHorde horde(3);
+	horde.announce();
+	
+	std::cout << "------------------------" << std::endl;
+	return (0);
+}

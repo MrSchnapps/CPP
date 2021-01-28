@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 14:04:43 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/21 10:25:29 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/28 19:20:43 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/28 20:07:52 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef	BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Contact.hpp"
-# include <limits>
+# include <iostream>
+# include <sstream>
+# include <string>
 
-class PhoneBook
+class Brain
 {
 	public:
-		PhoneBook();
-		~PhoneBook();
-		void	setContact();
-		void	print_command();
-		void	print_list();
+		Brain();
+		~Brain();
 
+		int			getNeurons();
+		void		setNeurons(int nb);
+
+		std::string	identify();
+		
 	private:
-		Contact list[8];
-		int     amount;
+		int _neurons;
 
-		void 	choice();
 };
-
 #endif

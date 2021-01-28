@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 14:04:43 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/21 10:25:29 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/28 19:20:58 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/28 21:11:24 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Human.hpp"
 
-# include "Contact.hpp"
-# include <limits>
+Human::Human() {}
 
-class PhoneBook
+Human::~Human() {}
+
+/*
+** I use a reference for return the exact variable instead a copy
+** We can't use a pointer because we need to call the 
+** function with a " . " instead a " -> "
+*/
+
+Brain			&Human::getBrain() 
 {
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void	setContact();
-		void	print_command();
-		void	print_list();
+	return (this->_brain);
+}
 
-	private:
-		Contact list[8];
-		int     amount;
-
-		void 	choice();
-};
-
-#endif
+std::string		Human::identify()
+{
+	return (this->_brain.identify());
+}

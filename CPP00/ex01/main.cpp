@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 15:09:04 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/20 16:45:41 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/01/21 11:26:38 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ void	print_head()
 	std::cout << "|                                                                             |" << std::endl;
 	std::cout << " =============================================================================" << std::endl;
 }
-
 int     main()
 {
 	bool		loop;
 	std::string command;
-	PhoneBook	phone_book;	
+	PhoneBook	phone_book;
 	
 	loop = true;
 	print_head();
