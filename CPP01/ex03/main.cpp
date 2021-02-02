@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 13:44:49 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/28 18:44:12 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/01 00:07:26 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 	horde_wrong.announce();
 
 	std::cout << "------------------------" << std::endl;
-	ZombieHorde horde(3);
+	ZombieHorde horde(8);
 	horde.announce();
 	
 	std::cout << "------------------------" << std::endl;

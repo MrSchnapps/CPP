@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 19:20:58 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/01 00:17:12 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/29 10:37:48 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/29 14:47:57 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-Human::Human() {}
-
-Human::~Human() {}
-
-/*
-** I use a reference for return the exact variable instead a copy
-*/
-
-Brain			&Human::getBrain() 
+int main()
 {
-	return (this->_brain);
-}
+	{
+		Weapon club = Weapon("crude spiked club");
+		
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
 
-std::string		Human::identify()
-{
-	return (this->_brain.identify());
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

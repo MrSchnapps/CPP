@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 10:38:26 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/01/21 11:07:14 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/01/31 23:47:12 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void    ponyOnTheHeap()
 	std::cout << "Deleting pony on the Heap" << std::endl;
 	delete pony;
 }
-
 
 int		main()
 {

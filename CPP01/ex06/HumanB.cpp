@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 19:20:58 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/01 00:17:12 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/29 10:51:26 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/29 14:46:41 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "HumanB.hpp"
 
-Human::Human() {}
+HumanB::HumanB(std::string name)
+: _name(name), _weapon(NULL)
+{}
 
-Human::~Human() {}
+HumanB::~HumanB() {}
 
-/*
-** I use a reference for return the exact variable instead a copy
-*/
-
-Brain			&Human::getBrain() 
+void			HumanB::setWeapon(Weapon &weapon)
 {
-	return (this->_brain);
+    this->_weapon = &weapon;
 }
 
-std::string		Human::identify()
+void			HumanB::attack()
 {
-	return (this->_brain.identify());
+    std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
 }

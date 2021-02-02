@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 19:20:58 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/01 00:17:12 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/29 15:21:19 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/29 17:41:08 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
-Human::Human() {}
-
-Human::~Human() {}
+# include <iostream>
+# include <string>
+# include <fstream>
 
 /*
-** I use a reference for return the exact variable instead a copy
+** Error codes
 */
 
-Brain			&Human::getBrain() 
-{
-	return (this->_brain);
-}
+# define ARGERR 1
+# define NULLERR 2
+# define FILEERR 3
 
-std::string		Human::identify()
-{
-	return (this->_brain.identify());
-}
+#endif

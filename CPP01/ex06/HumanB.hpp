@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 19:20:58 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/01 00:17:12 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/01/29 10:51:29 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/01/29 14:48:18 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-Human::Human() {}
+# include <iostream>
+# include "Weapon.hpp"
 
-Human::~Human() {}
-
-/*
-** I use a reference for return the exact variable instead a copy
-*/
-
-Brain			&Human::getBrain() 
+class HumanB
 {
-	return (this->_brain);
-}
+	public:
+		HumanB(std::string name);
+		~HumanB();
 
-std::string		Human::identify()
-{
-	return (this->_brain.identify());
-}
+		void			setWeapon(Weapon &weapon);
+
+		void			attack();
+
+	private:
+		std::string _name;
+		Weapon		*_weapon;
+};
+
+#endif
