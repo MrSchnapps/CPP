@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 18:55:28 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:11:08 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/09 12:48:30 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class ScavTrap : public ClapTrap
 
 		void			challengeNewcomer(std::string name);
 
-		void			print_infos(void);
 		void			print_hello(void);
 };
 #endif

@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 18:55:28 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:11:08 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/02/09 12:09:46 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/02/09 21:26:34 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __SCAVTRAP_HPP__
-# define __SCAVTRAP_HPP__
+#ifndef __NINJATRAP_HPP__
+# define __NINJATRAP_HPP__
 
-# include <cstdlib>
-# include <ctime>
 # include "ClapTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
-class ScavTrap;
-
-class ScavTrap : public ClapTrap
+class NinjaTrap : public ClapTrap
 {
-	public:
-		ScavTrap(std::string name);
-		~ScavTrap();
+	public :
+		NinjaTrap(std::string name);
+		~NinjaTrap();
 
-		void			challengeNewcomer(std::string name);
+		void			ninjaShoebox(ClapTrap const &target);
+		void			ninjaShoebox(FragTrap const &target);
+		void			ninjaShoebox(ScavTrap const &target);
+		void			ninjaShoebox(NinjaTrap const &target);
 
-		void			print_infos(void);
 		void			print_hello(void);
+
 };
+
 #endif

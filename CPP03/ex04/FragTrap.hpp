@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 20:05:32 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:11:02 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/09 22:22:03 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class FragTrap;
 
 typedef unsigned int (FragTrap::*list_attack)(std::string name);
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 	public:
 		FragTrap(std::string name);
@@ -29,7 +29,6 @@ class FragTrap : public ClapTrap
 
 		unsigned int	vaulthunter_dot_exe(std::string const & target);
 
-		void			print_infos(void);
 		void			print_hello(void);
 
 	private:

@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 18:20:13 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 21:37:46 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/09 21:50:28 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap()
 	_energy_points(0),
 	_max_energy_points(0),
 	_level(0),
-	_name(""),
+	_name("ClapTrap"),
 	_melee_attack_damage(0),
 	_ranged_attack_damage(0),
 	_armor_damage_reduction(0)
@@ -119,6 +119,22 @@ void			ClapTrap::beRepaired(unsigned int amount)
 		else
 			std::cout << "You have recovered " << amount << " hp." << std::endl;
 	}
+}
+
+/*
+** Print
+*/
+
+void			ClapTrap::print_infos(void)
+{
+	std::cout << "---------------------" << std::endl;
+	std::cout << "-       Infos       -" << std::endl;
+	std::cout << "---------------------" << std::endl;
+	std::cout << this->_name << " : " << std::endl;
+	std::cout << "Hp : " << this->_hit_points << std::endl;
+	std::cout << "Energy : " << this->_energy_points << std::endl;
+	std::cout << "Level : " << this->_level << std::endl;
+	std::cout << std::endl;
 }
 
 void	ClapTrap::print_full_infos(void)

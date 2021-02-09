@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 18:20:10 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:05:51 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/09 12:48:16 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class ClapTrap
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 
+		void			print_infos(void);
 		void			print_full_infos(void);
 
 	protected:

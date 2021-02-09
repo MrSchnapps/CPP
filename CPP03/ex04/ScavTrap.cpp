@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 18:58:16 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:11:13 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/09 21:55:40 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,7 @@ void			ScavTrap::challengeNewcomer(std::string name)
 ** Print
 */
 
-void			ScavTrap::print_infos(void)
-{
-	std::cout << "---------------------" << std::endl;
-	std::cout << "-       Infos       -" << std::endl;
-	std::cout << "---------------------" << std::endl;
-	std::cout << this->_name << " : " << std::endl;
-	std::cout << "Hp : " << this->_hit_points << std::endl;
-	std::cout << "Energy : " << this->_energy_points << std::endl;
-	std::cout << "Level : " << this->_level << std::endl;
-	std::cout << std::endl;
-}
-
 void			ScavTrap::print_hello(void)
 {
-	std::cout << this->_name << " Bonsooiiirrr Pariiiiiiiissss" << std::endl;
+	std::cout << this->_name << " : Bonsooiiirrr Pariiiiiiiissss" << std::endl;
 }

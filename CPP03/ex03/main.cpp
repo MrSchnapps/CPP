@@ -5,26 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 18:09:26 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 21:43:49 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/02/09 12:02:33 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/02/09 22:01:14 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main()
 {
-	{
-		FragTrap frag("Pippin");
-		frag.print_full_infos();
-	}
-	{
-		ScavTrap scav("Merry");
-		scav.print_full_infos();
-	}
-	FragTrap frag("Sam");
-	ScavTrap scav("Frodon");
+	ClapTrap clap;
+	ScavTrap scav("Asterix");
+	FragTrap frag("Obelix");
+	NinjaTrap ninj("Idefix");
+
+	ninj.ninjaShoebox(scav);
+	ninj.ninjaShoebox(frag);
+	ninj.ninjaShoebox(ninj);
+	ninj.ninjaShoebox(clap);
+	std::cout << std::endl;
 	frag.takeDamage(scav.meleeAttack(frag.getName()));
 	scav.takeDamage(frag.vaulthunter_dot_exe(scav.getName()));
 	scav.challengeNewcomer(frag.getName());

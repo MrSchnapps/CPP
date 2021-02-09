@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 20:05:32 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:11:02 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/09 12:48:42 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class FragTrap : public ClapTrap
 
 		unsigned int	vaulthunter_dot_exe(std::string const & target);
 
-		void			print_infos(void);
 		void			print_hello(void);
 
 	private:

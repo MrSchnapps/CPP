@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 20:05:35 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:07:25 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/09 22:16:14 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,18 +101,6 @@ unsigned int	FragTrap::avadakedavra(std::string name)
 /*
 ** Print
 */
-
-void			FragTrap::print_infos(void)
-{
-	std::cout << "---------------------" << std::endl;
-	std::cout << "-       Infos       -" << std::endl;
-	std::cout << "---------------------" << std::endl;
-	std::cout << this->_name << " : " << std::endl;
-	std::cout << "Hp : " << this->_hit_points << std::endl;
-	std::cout << "Energy : " << this->_energy_points << std::endl;
-	std::cout << "Level : " << this->_level << std::endl;
-	std::cout << std::endl;
-}
 
 void			FragTrap::print_hello(void)
 {

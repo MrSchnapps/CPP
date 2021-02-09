@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 18:55:28 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:11:08 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/02/09 22:02:45 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/02/09 23:11:32 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __SCAVTRAP_HPP__
-# define __SCAVTRAP_HPP__
+#ifndef __SUPERTRAP_HPP__
+# define __SUPERTRAP_HPP__
 
-# include <cstdlib>
-# include <ctime>
-# include "ClapTrap.hpp"
+# include "NinjaTrap.hpp"
 
-class ScavTrap;
-
-class ScavTrap : public ClapTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
 	public:
-		ScavTrap(std::string name);
-		~ScavTrap();
+		SuperTrap(std::string name);
+		~SuperTrap();
 
-		void			challengeNewcomer(std::string name);
+		unsigned int	rangedAttack(std::string name);
+		unsigned int	meleeAttack(std::string name);
 
-		void			print_infos(void);
 		void			print_hello(void);
 };
+
 #endif
