@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 12:02:33 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 23:10:19 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:02:45 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int main()
 	std::cout << std::endl;
 	superman.meleeAttack(scav.getName());
 	superman.rangedAttack(frag.getName());
+	superman.ninjaShoebox(ninj);
+	superman.vaulthunter_dot_exe(frag.getName());
+
 	std::cout << std::endl;
 
 	/*ninj.ninjaShoebox(scav);

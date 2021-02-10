@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 22:02:45 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 23:11:32 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/10 15:44:45 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define __SUPERTRAP_HPP__
 
 # include "NinjaTrap.hpp"
+
+class SuperTrap;
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {

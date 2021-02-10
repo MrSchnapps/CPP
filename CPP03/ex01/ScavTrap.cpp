@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 18:58:16 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/05 18:19:04 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:16:53 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ unsigned int	ScavTrap::rangedAttack(std::string const & target)
 		{
 			unsigned int nrg = 5;
 			if (this->_energy_points + nrg > this->_max_energy_points)
-				nrg = (this->_energy_points + nrg) - this->_max_energy_points;
+				nrg = this->_max_energy_points - this->_energy_points;
 			this->_energy_points += nrg;
 			std::cout << "You recover " << nrg << " energy points." << std::endl;
 		}
@@ -67,7 +67,7 @@ unsigned int	ScavTrap::meleeAttack(std::string const & target)
 		{
 			unsigned int nrg = 3;
 			if (this->_energy_points + nrg > this->_max_energy_points)
-				nrg = (this->_energy_points + nrg) - this->_max_energy_points;
+				nrg = this->_max_energy_points - this->_energy_points;
 			this->_energy_points += nrg;
 			std::cout << "You recover " << nrg << " energy points." << std::endl;
 		}

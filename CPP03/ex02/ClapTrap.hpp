@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 18:20:10 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 12:05:51 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/10 14:55:31 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,5 @@ class ClapTrap
 		unsigned int	_melee_attack_damage;
 		unsigned int	_ranged_attack_damage;
 		unsigned int	_armor_damage_reduction;
-
 };
 #endif

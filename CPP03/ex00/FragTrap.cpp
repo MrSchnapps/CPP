@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 20:05:35 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/05 18:18:29 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:17:17 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ unsigned int	FragTrap::rangedAttack(std::string const & target)
 		{
 			unsigned int nrg = 5;
 			if (this->_energy_points + nrg > this->_max_energy_points)
-				nrg = (this->_energy_points + nrg) - this->_max_energy_points;
+				nrg = this->_max_energy_points - this->_energy_points;
 			this->_energy_points += nrg;
 			std::cout << "You recover " << nrg << " energy points." << std::endl;
 		}
@@ -73,7 +73,7 @@ unsigned int	FragTrap::meleeAttack(std::string const & target)
 		{
 			unsigned int nrg = 5;
 			if (this->_energy_points + nrg > this->_max_energy_points)
-				nrg = (this->_energy_points + nrg) - this->_max_energy_points;
+				nrg = this->_max_energy_points - this->_energy_points;
 			this->_energy_points += nrg;
 			std::cout << "You recover " << nrg << " energy points." << std::endl;
 		}

@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 18:20:13 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 21:37:46 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:16:22 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap()
 	_energy_points(0),
 	_max_energy_points(0),
 	_level(0),
-	_name(""),
+	_name("ClapTrap"),
 	_melee_attack_damage(0),
 	_ranged_attack_damage(0),
 	_armor_damage_reduction(0)
@@ -43,7 +43,7 @@ unsigned int	ClapTrap::rangedAttack(std::string const & target)
 		{
 			unsigned int nrg = 5;
 			if (this->_energy_points + nrg > this->_max_energy_points)
-				nrg = (this->_energy_points + nrg) - this->_max_energy_points;
+				nrg = this->_max_energy_points - this->_energy_points;
 			this->_energy_points += nrg;
 			std::cout << "You recover " << nrg << " energy points." << std::endl;
 		}
@@ -65,7 +65,7 @@ unsigned int	ClapTrap::meleeAttack(std::string const & target)
 		{
 			unsigned int nrg = 5;
 			if (this->_energy_points + nrg > this->_max_energy_points)
-				nrg = (this->_energy_points + nrg) - this->_max_energy_points;
+				nrg = this->_max_energy_points - this->_energy_points;
 			this->_energy_points += nrg;
 			std::cout << "You recover " << nrg << " energy points." << std::endl;
 		}

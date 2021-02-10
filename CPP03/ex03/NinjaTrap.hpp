@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 12:09:46 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/09 21:26:34 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/10 15:44:11 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "ClapTrap.hpp"
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
+
+class NinjaTrap;
 
 class NinjaTrap : public ClapTrap
 {
