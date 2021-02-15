@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 15:33:02 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/15 15:38:46 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/15 17:02:02 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,24 @@ int main()
 	std::cout << *me;
 	me->attack(b);
 	std::cout << *me;
+
+	std::cout << "===========================================================================================" << std::endl;
+
+	Enemy *mut = new SuperMutant();
+	me->attack(mut);
+	std::cout << *me;
+	me->attack(mut);
+	std::cout << *me;
+	me->attack(mut);
+	std::cout << *me;
+	me->attack(mut);
+	std::cout << *me;
+	me->recoverAP();
+	std::cout << *me;
+	me->recoverAP();
+	me->recoverAP();
+	me->recoverAP();
+	std::cout << *me;
+	
 	return 0;
 }
