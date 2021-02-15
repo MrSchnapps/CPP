@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 16:08:19 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/12 18:06:48 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/02/15 14:02:15 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/02/15 14:53:00 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __VICTIM_HPP__
-# define __VICTIM_HPP__
+#ifndef __RADSCORPION_HPP__
+# define __RADSCORPION_HPP__
 
+# include "Enemy.hpp"
 # include <iostream>
-# include <string>
 
-class Victim;
+class RadScorpion;
 
-class Victim
+class RadScorpion : public Enemy
 {
-	public:
-		Victim(std::string name);
-		virtual~Victim();
-		Victim(const Victim &copy);
-		Victim &operator=(const Victim &op);
+	public :
+		RadScorpion();
+		RadScorpion(RadScorpion const &copy);
+		virtual ~RadScorpion();
+		RadScorpion &operator=(RadScorpion &op);
 
-		 std::string	getName() const;
-
-		virtual void	getPolymorphed() const;
-
-	protected:
-		Victim();
-
-		std::string _name;
+		void takeDamage(int amount);
 };
 
 #endif
-
-std::ostream	&operator<<(std::ostream &out, Victim &vict);

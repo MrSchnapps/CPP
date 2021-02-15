@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 16:08:19 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/12 18:06:48 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/02/15 12:54:57 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/02/15 14:53:31 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __VICTIM_HPP__
-# define __VICTIM_HPP__
+#ifndef __SUPERMUTANT_HPP__
+# define __SUPERMUTANT_HPP__
 
+# include "Enemy.hpp"
 # include <iostream>
-# include <string>
 
-class Victim;
+class SuperMutant;
 
-class Victim
+class SuperMutant : public Enemy
 {
-	public:
-		Victim(std::string name);
-		virtual~Victim();
-		Victim(const Victim &copy);
-		Victim &operator=(const Victim &op);
+	public :
+		SuperMutant();
+		SuperMutant(SuperMutant const &copy);
+		virtual ~SuperMutant();
+		SuperMutant &operator=(SuperMutant &op);
 
-		 std::string	getName() const;
-
-		virtual void	getPolymorphed() const;
-
-	protected:
-		Victim();
-
-		std::string _name;
+		void takeDamage(int amount);
 };
 
 #endif
-
-std::ostream	&operator<<(std::ostream &out, Victim &vict);
