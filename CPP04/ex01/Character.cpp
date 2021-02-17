@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 14:10:15 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/15 16:42:38 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/15 17:40:18 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Character::Character() {}
 Character::Character(std::string const & name)
 :	_name(name),
 	_ap(40),
-	_weapon(nullptr)
+	_weapon(NULL)
 {}
 
 Character::Character(Character &copy)
@@ -72,7 +72,7 @@ void Character::equip(AWeapon* weapon)
 
 void Character::attack(Enemy* enemy)
 {
-	if (_weapon == nullptr)
+	if (_weapon == NULL)
 		return ;
 	if (_ap < _weapon->getAPCost())
 		std::cout << "Not enough AP." << std::endl;
@@ -89,10 +89,9 @@ void Character::attack(Enemy* enemy)
 
 std::ostream &operator<<(std::ostream &out, Character const &charac)
 {
-	if (charac.getWeapon() == nullptr)
+	if (charac.getWeapon() == NULL)
 		out << charac.getName() << " has " << charac.getAP() << " AP and is unarmed" << std::endl;
 	else
 		out << charac.getName() << " has " << charac.getAP() << " AP and wields a " << charac.getWeapon()->getName() << std::endl;
 	return (out);
 }
-

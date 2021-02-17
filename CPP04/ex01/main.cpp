@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 15:33:02 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/15 17:02:02 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/15 17:21:23 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ int main()
 	me->recoverAP();
 	me->recoverAP();
 	std::cout << *me;
-	
+	delete mut;
+	delete pr;
+	delete pf;
+	delete me;
 	return 0;
 }
