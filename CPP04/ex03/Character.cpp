@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 22:38:35 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/18 10:41:38 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/18 15:53:47 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ Character::Character(std::string const &name)
 Character::Character(Character const &copy)
 :	_name(copy.getName())
 {
-	for (int i = 0; i < _materia_equiped; i++)
-		delete _inventory[i];
 	_materia_equiped = 0;
 	for (int i = 0; i < copy.getMateriaEquiped(); i++)
 		equip(copy.getMateria(i)->clone());
@@ -50,7 +48,10 @@ Character &Character::operator=(const Character &op)
 		return (*this);
 	_name = op.getName();
 	for (int i = 0; i < _materia_equiped; i++)
+	{
 		delete _inventory[i];
+		_inventory[i] = NULL;
+	}
 	_materia_equiped = 0;
 	for (int i = 0; i < op.getMateriaEquiped(); i++)
 		 equip(op.getMateria(i)->clone());
@@ -104,6 +105,7 @@ void 				Character::unequip(int idx)
 			_inventory[i + 1] = NULL;
 		}
 	}
+	_materia_equiped -= 1;
 }
 
 void 				Character::use(int idx, ICharacter& target)

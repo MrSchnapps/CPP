@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 23:40:28 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/18 10:55:08 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/18 15:06:49 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(MateriaSource &copy)
 {
-	for (int i = 0; i < copy._size_list; i++)
-		delete _list[i];
 	_size_list = 0;
 	for (int i = 0; i < copy.getSizeList(); i++)
 		learnMateria(copy.getMateria(i)->clone());
@@ -36,21 +34,20 @@ MateriaSource::MateriaSource(MateriaSource &copy)
 
 MateriaSource::~MateriaSource()
 {
-	//std::cout << "test" << std::endl;
 	for (int i = 0; i < _size_list; i++)
-			delete _list[i];
+			delete this->_list[i];
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource &op)
 {
 	if (this == &op)
 		return (*this);
-	for (int i = 0; i < op._size_list; i++)
+	for (int i = 0; i < _size_list; i++)
 		delete _list[i];
 	_size_list = 0;
 	for (int i = 0; i < op.getSizeList(); i++)
 		learnMateria(op.getMateria(i)->clone());
-	for (int i = op.getSizeList(); i < 4; i++)
+	for (int i = _size_list; i < 4; i++)
 		_list[i] = NULL;
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 23:40:22 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/18 00:43:29 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/18 14:53:19 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class MateriaSource : public IMateriaSource
 		virtual ~MateriaSource();
 		MateriaSource &operator=(MateriaSource &op);
 
-		AMateria*	getMateria(int) const;
+		AMateria*	getMateria(int nb) const;
 		int 		getSizeList() const;
 
 		void		learnMateria(AMateria*);
