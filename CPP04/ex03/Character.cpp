@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 22:38:35 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/18 00:21:30 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:41:38 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Character::Character(std::string const &name)
 		_inventory[i] = NULL;
 }
 
-Character::Character(const Character &copy)
+Character::Character(Character const &copy)
 :	_name(copy.getName())
 {
 	for (int i = 0; i < _materia_equiped; i++)
@@ -64,8 +64,10 @@ Character &Character::operator=(const Character &op)
 */
 
 std::string const	&Character::getName() const {return (_name);}
+
 int					Character::getMateriaEquiped() const {return (_materia_equiped);}
-AMateria*			Character::getMateria(int nb ) const
+
+AMateria*			Character::getMateria(int nb) const
 {
 	if (nb < 0 || nb >= getMateriaEquiped())
 		return (NULL);
@@ -77,14 +79,14 @@ AMateria*			Character::getMateria(int nb ) const
 ** Other
 */
 
-void				Character::equip(AMateria* m)
+void				Character::equip(AMateria* materia)
 {
-	if (!m || _materia_equiped == 4)
+	if (!materia || _materia_equiped == 4)
 		return ;
 	for (int i = 0; i < _materia_equiped; i++)
-		if (_inventory[i] == m)
+		if (_inventory[i] == materia)
 			return ;
-	_inventory[_materia_equiped] = m;
+	_inventory[_materia_equiped] = materia;
 	_materia_equiped++;
 }
 

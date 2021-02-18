@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:22:45 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/18 00:33:48 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:46:36 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <iostream>
 # include "ICharacter.hpp"
 
-class AMateria;
+class ICharacter;
 
 class AMateria
 {

@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 00:10:36 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/18 00:49:51 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:48:29 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
-	
 	return 0;
 }

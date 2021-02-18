@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 23:40:31 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/18 00:36:10 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:22:18 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __IMATERIASOURCE_HPP__
 
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 class IMateriaSource;
 

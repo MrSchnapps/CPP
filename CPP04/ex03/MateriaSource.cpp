@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 23:40:28 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/18 00:15:45 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:55:08 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ MateriaSource::MateriaSource(MateriaSource &copy)
 
 MateriaSource::~MateriaSource()
 {
+	//std::cout << "test" << std::endl;
 	for (int i = 0; i < _size_list; i++)
-		delete _list[i];
+			delete _list[i];
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource &op)
@@ -80,6 +81,6 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < _size_list; i++)
 		if (_list[i]->getType() == type)
-			return (_list[i]);
+			return (_list[i]->clone());
 	return (NULL);
 }
