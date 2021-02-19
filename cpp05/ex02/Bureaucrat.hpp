@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:24:14 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/19 11:39:11 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:02:55 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 # include <string>
 # include <iostream>
 # include <exception>
+# include "Form.hpp"
 
 # define P(x) std::cout << x << std::endl;
 
+class Form;
 class Bureaucrat;
 
 class Bureaucrat
@@ -35,9 +37,6 @@ class Bureaucrat
 		void			upGrade();
 		void			downGrade();	
 
-	private :
-		Bureaucrat();
-		
 		class GradeTooHighException :  public std::exception
 		{
 			const char *what() const throw();
@@ -49,6 +48,14 @@ class Bureaucrat
 		};
 		
 		void 			handleGrade(unsigned int grade);
+		void			signForm(Form &form) const;
+
+		void			executeForm(Form const & form) const;
+
+	private :
+		Bureaucrat();
+		
+		
 		std::string const	_name;
 		unsigned int		_grade;
 };

@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:24:17 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/19 13:51:09 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/19 13:48:06 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade)
 
 Bureaucrat::Bureaucrat(Bureaucrat &copy)
 :	_name(copy.getName()),
-	_grade(150)
-{
-	handleGrade(copy.getGrade());
-}
+	_grade(copy.getGrade())
+{}
 
 Bureaucrat::~Bureaucrat() {}
 
@@ -66,6 +64,25 @@ void			Bureaucrat::downGrade()
 	handleGrade(test);
 }
 
+void			Bureaucrat::signForm(Form &form) const
+{
+	if (form.getSigned() == 1)
+		std::cout << _name << " cannot sign "<< form.getName() << " because the form is already signed." << std::endl;
+	else if (form.getGradeSign() < _grade)
+		std::cout << _name << " cannot sign "<< form.getName() << " because his grade is too low." << std::endl;
+	else
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signs " << form.getName() << std::endl;
+	}
+
+	
+}
+
+/*
+** Exceptions
+*/
+
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	std::cout << "Grade is too high (max 1)." << std::endl;
@@ -81,12 +98,16 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 void 			Bureaucrat::handleGrade(unsigned int grade)
 {
 	if (grade > 150)
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	else if (grade < 1)
-		throw GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	else
 		_grade = grade;
 }
+
+/*
+** Operators
+*/
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &b)
 {
