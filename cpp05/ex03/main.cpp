@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:24:11 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/19 23:43:51 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/21 11:22:27 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,12 @@ int main()
 		Intern  someRandomIntern;
 		Bureaucrat ted("Ted", 10);
 
-		
-
 		rrf2 = someRandomIntern.makeForm("shrubbery creation", "home");
 		if (rrf2)
 		{
 			rrf2->beSigned(ted);
-			rrf2->execute(ted);
+			ted.executeForm(*rrf2);
+			//rrf2->execute(ted);
 		}
 		delete rrf2;
 	}
@@ -64,7 +63,10 @@ int main()
 
 		rrf3 = someRandomIntern.makeForm("robotomy request form", "a student");
 		if (rrf3)
+		{
+			rrf3->beSigned(ted);
 			rrf3->execute(ted);
+		}
 		delete rrf3;
 		
 	}
@@ -80,11 +82,14 @@ int main()
 	try
 	{
 		Intern  someRandomIntern;
-		Bureaucrat ted("Ted", 10);
+		Bureaucrat ted("Ted", 4);
 
 		rrf4 = someRandomIntern.makeForm("presidential pardon", "Obama");
 		if (rrf4)
+		{
+			rrf4->beSigned(ted);
 			rrf4->execute(ted);
+		}
 		delete rrf4;
 		
 	}

@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 18:24:24 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/19 20:50:31 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/21 11:19:45 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,32 @@
 Intern::Intern() {}
 Intern::Intern(Intern &copy) {(void)copy;}
 Intern::~Intern() {}
-Intern &Intern::operator=(Intern &op) {(void)op; return (*this);}
+Intern &Intern::operator=(Intern &op)
+{
+	if (this == &op)
+		return (*this);
+	return (*this);
+}
 
-Form*	getShrubbery(std::string const &target) {return (new ShrubberyCreationForm(target));}
-Form*	getRobot(std::string const &target) {return (new RobotomyRequestForm(target));}
-Form*	getPresident(std::string const &target) {return (new PresidentialPardonForm(target));}
+Form*	Intern::createShrubbery(std::string const &target) {return (new ShrubberyCreationForm(target));}
+Form*	Intern::createRobot(std::string const &target) {return (new RobotomyRequestForm(target));}
+Form*	Intern::createPresident(std::string const &target) {return (new PresidentialPardonForm(target));}
 
 Form*	Intern::makeForm(std::string const &name, std::string const &target)
 {
 	t_formulary list[12] = {
-		{"shrubbery creation", &getShrubbery},
-		{"shrubbery creation form", &getShrubbery},
-		{"shrubberycreation", &getShrubbery},
-		{"shrubberycreationform", &getShrubbery},
-		{"robotomy request", &getRobot},
-		{"robotomy request form", &getRobot},
-		{"robotomyrequest", &getRobot},
-		{"robotomyrequestform", &getRobot},
-		{"presidential pardon", &getPresident},
-		{"presidential pardon form", &getPresident},
-		{"presidentialpardon", &getPresident},
-		{"presidentialpardonform", &getPresident}
+		{"shrubbery creation", &createShrubbery},
+		{"shrubbery creation form", &createShrubbery},
+		{"shrubberycreation", &createShrubbery},
+		{"shrubberycreationform", &createShrubbery},
+		{"robotomy request", &createRobot},
+		{"robotomy request form", &createRobot},
+		{"robotomyrequest", &createRobot},
+		{"robotomyrequestform", &createRobot},
+		{"presidential pardon", &createPresident},
+		{"presidential pardon form", &createPresident},
+		{"presidentialpardon", &createPresident},
+		{"presidentialpardonform", &createPresident}
 	};
 	
 	for (int i = 0; i < 12; i++)
