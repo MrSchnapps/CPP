@@ -6,12 +6,12 @@
 #    By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 14:01:32 by judecuyp          #+#    #+#              #
-#    Updated: 2021/02/23 11:07:22 by judecuyp         ###   ########.fr        #
+#    Updated: 2021/02/23 15:31:35 by judecuyp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
-SRCS = srcs/main.cpp srcs/Convert.cpp
+NAME = Identify
+SRCS = srcs/main.cpp srcs/A.cpp srcs/B.cpp srcs/C.cpp srcs/identify.cpp
 INCLUDES = ./includes
 OBJS = $(SRCS:.cpp=.o)
 CXX = clang++

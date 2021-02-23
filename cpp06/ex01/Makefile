@@ -6,13 +6,13 @@
 #    By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 14:01:32 by judecuyp          #+#    #+#              #
-#    Updated: 2021/02/23 11:07:22 by judecuyp         ###   ########.fr        #
+#    Updated: 2021/02/23 13:09:13 by judecuyp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
-SRCS = srcs/main.cpp srcs/Convert.cpp
-INCLUDES = ./includes
+NAME = Serialization
+SRCS = main.cpp
+INCLUDES = .
 OBJS = $(SRCS:.cpp=.o)
 CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror
