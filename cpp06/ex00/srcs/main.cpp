@@ -5,64 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 20:24:11 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/21 12:07:35 by judecuyp         ###   ########.fr       */
+/*   Created: 2021/02/22 23:38:48 by judecuyp          #+#    #+#             */
+/*   Updated: 2021/02/23 01:35:59 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Convert.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
-	try
-	{
-		Bureaucrat terry("Terry", 160);
-		P(terry);
-		P("");
-	}
-	catch (std::exception &e)
-	{
-		e.what();
-	}
-	
-	try
-	{
-		Bureaucrat larry("Larry", 0);
-		P(larry);
-		P("");
-	}
-	catch (std::exception &e)
-	{
-		e.what();
-	}
-	
+	Convert		conv;
+	long double	to_convert = 0;
 
-	Bureaucrat jerry("Jerry", 150);
-	P(jerry);
-	try
+	if (argc != 2)
 	{
-		jerry.downGrade();
+		std::cout << "Error : Wrong number of arguments." << std::endl;
+		return (EXIT_FAILURE);
 	}
-	catch (std::exception &e)
+	conv.setInput(argv[1]);
+	if (!conv.parsing(to_convert))
 	{
-		e.what();
+		std::cout << "Error : Argument must be a char / int / float / double / +inf / -inf / nan." << std::endl;
 	}
-	P(jerry);
-	jerry.upGrade();
-	P(jerry);
-
-	Bureaucrat henry("Henry", 1);
-	P(henry);
-	try
-	{
-		henry.upGrade();
-	}
-	catch (std::exception &e)
-	{
-		e.what();
-	}
-	P(henry);
-	henry.downGrade();
-	P(henry);
+	double d = static_cast<double>(to_convert);
+	conv.toChar(d);
+	conv.toInt(d);
+	conv.toFloat(d);
+	conv.toDouble(d);
 	return (0);
 }
