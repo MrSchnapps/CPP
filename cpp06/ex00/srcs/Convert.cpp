@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 23:43:49 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/02/23 11:53:03 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:17:18 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ bool		Convert::is_num()
 }
 
 bool		Convert::parsing(long double &to_convert)
-{	
+{
 	if (!_input.compare("+inf") || !_input.compare("-inf"))
 	{
 		_isInf = true;
