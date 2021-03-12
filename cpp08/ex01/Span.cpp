@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 23:12:07 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/03/12 00:33:32 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/03/12 15:17:02 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@ Span::Span(unsigned int const &size)
 : _size(size)
 {
 	_stock.reserve(size);
-	std::cout << "A new span was created" << std::endl;
 }
 
 Span::Span(const Span &copy)
 {
-	std::cout << "A new span was created with copy constructor" << std::endl;
 	_size = copy.getSize();
 	_stock = copy.getStock();
 }
@@ -34,7 +32,6 @@ Span::~Span() {}
 
 Span &Span::operator=(Span &op)
 {
-	std::cout << "A new span was created with operator =" << std::endl;
 	if (this == &op)
 		return (*this);
 	_size = op.getSize();
@@ -55,17 +52,10 @@ std::vector<int>	Span::getStock() const {return(_stock);}
 
 void		Span::addNumber(int nb)
 {
-	try
-	{
-		if (_stock.size() < _size)
-			_stock.push_back(nb);
-		else
-			throw StockFullException();
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (_stock.size() < _size)
+		_stock.push_back(nb);
+	else
+		throw StockFullException();
 }
 
 long			Span::shortestSpan()

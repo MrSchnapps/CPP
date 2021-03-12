@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 23:09:12 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/03/11 21:59:32 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/03/12 14:54:42 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Span
 	public:
 		Span(unsigned int const &size);
 		Span(const Span &copy);
-		~Span();
+		virtual ~Span();
 		Span &operator=(Span &op);
 
 		unsigned int		getSize() const;

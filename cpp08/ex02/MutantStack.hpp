@@ -6,7 +6,7 @@
 /*   By: judecuyp <judecuyp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 11:05:58 by judecuyp          #+#    #+#             */
-/*   Updated: 2021/03/12 13:38:57 by judecuyp         ###   ########.fr       */
+/*   Updated: 2021/03/12 15:19:01 by judecuyp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class MutantStack : public std::stack<T>
 		{
 			if (this == &op)
 				return (*this);
-			this->c = op.c;
 			return (*this);
 		}
 
